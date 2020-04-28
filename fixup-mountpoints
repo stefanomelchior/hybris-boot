@@ -25,6 +25,17 @@ case "$DEVICE" in
             "$@"
         ;;
 
+   "karin" | "karin_windy")
+        sed -i \
+            -e 's block/bootdevice/by-name/system mmcblk0p44 ' \
+            -e 's block/bootdevice/by-name/userdata mmcblk0p43 ' \
+            -e 's block/bootdevice/by-name/cache mmcblk0p41 ' \
+            -e 's block/bootdevice/by-name/modem mmcblk0p03 ' \
+            -e 's block/bootdevice/by-name/diag mmcblk0p39 ' \
+            -e 's block/bootdevice/by-name/persist mmcblk0p31 ' \
+            "$@"
+        ;;
+
     "suzu" | "kugo" | "blanc")
         sed -i \
             -e 's block/bootdevice/by-name/cache mmcblk0p24 ' \
